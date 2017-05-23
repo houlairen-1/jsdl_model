@@ -1,0 +1,59 @@
+[pysteg.jpeg] $Id: __init__.py 2204 2011-04-05 11:43:38Z georg $
+w0:(5, 5, 1, 25)
+conv0_s_1:Tensor("conv0/sub_1:0", shape=(40, 256, 256, 25), dtype=float32)
+pool3_s_1:(40, 512)
+training: batch result
+epoch: 100
+loss: 0.693149
+accuracy: 0.5
+ 
+training: batch result
+epoch: 200
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 300
+loss: 0.693149
+accuracy: 0.5
+ 
+training: batch result
+epoch: 400
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 500
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 600
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 700
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 800
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 900
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 1000
+loss: 0.693148
+accuracy: 0.5
+ 
+training: batch result
+epoch: 1100
+loss: 0.693148
+accuracy: 0.5
+ 
