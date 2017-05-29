@@ -72,3 +72,940 @@ epoch: 1400
 loss: 0.691294
 accuracy: 0.525
  
+training: batch result
+epoch: 1500
+loss: 0.678093
+accuracy: 0.575
+ 
+training: batch result
+epoch: 1600
+loss: 0.686888
+accuracy: 0.5
+ 
+training: batch result
+epoch: 1700
+loss: 0.681295
+accuracy: 0.575
+ 
+training: batch result
+epoch: 1800
+loss: 0.690153
+accuracy: 0.525
+ 
+training: batch result
+epoch: 1900
+loss: 0.679059
+accuracy: 0.525
+ 
+training: batch result
+epoch: 2000
+loss: 0.681197
+accuracy: 0.575
+ 
+training: batch result
+epoch: 2100
+loss: 0.691635
+accuracy: 0.5
+ 
+training: batch result
+epoch: 2200
+loss: 0.682911
+accuracy: 0.575
+ 
+training: batch result
+epoch: 2300
+loss: 0.678153
+accuracy: 0.525
+ 
+training: batch result
+epoch: 2400
+loss: 0.670144
+accuracy: 0.6
+ 
+training: batch result
+epoch: 2500
+loss: 0.67734
+accuracy: 0.675
+ 
+training: batch result
+epoch: 2600
+loss: 0.688348
+accuracy: 0.575
+ 
+training: batch result
+epoch: 2700
+loss: 0.670807
+accuracy: 0.65
+ 
+training: batch result
+epoch: 2800
+loss: 0.682724
+accuracy: 0.575
+ 
+training: batch result
+epoch: 2900
+loss: 0.657613
+accuracy: 0.675
+ 
+training: batch result
+epoch: 3000
+loss: 0.670929
+accuracy: 0.55
+ 
+training: batch result
+epoch: 3100
+loss: 0.681718
+accuracy: 0.575
+ 
+training: batch result
+epoch: 3200
+loss: 0.679928
+accuracy: 0.55
+ 
+training: batch result
+epoch: 3300
+loss: 0.675309
+accuracy: 0.575
+ 
+training: batch result
+epoch: 3400
+loss: 0.67426
+accuracy: 0.55
+ 
+training: batch result
+epoch: 3500
+loss: 0.658696
+accuracy: 0.65
+ 
+training: batch result
+epoch: 3600
+loss: 0.671106
+accuracy: 0.6
+ 
+training: batch result
+epoch: 3700
+loss: 0.658286
+accuracy: 0.6
+ 
+training: batch result
+epoch: 3800
+loss: 0.675451
+accuracy: 0.55
+ 
+training: batch result
+epoch: 3900
+loss: 0.670428
+accuracy: 0.625
+ 
+training: batch result
+epoch: 4000
+loss: 0.660768
+accuracy: 0.65
+ 
+training: batch result
+epoch: 4100
+loss: 0.661539
+accuracy: 0.575
+ 
+training: batch result
+epoch: 4200
+loss: 0.651351
+accuracy: 0.65
+ 
+training: batch result
+epoch: 4300
+loss: 0.665337
+accuracy: 0.6
+ 
+training: batch result
+epoch: 4400
+loss: 0.68403
+accuracy: 0.5
+ 
+training: batch result
+epoch: 4500
+loss: 0.679342
+accuracy: 0.5
+ 
+training: batch result
+epoch: 4600
+loss: 0.689234
+accuracy: 0.55
+ 
+training: batch result
+epoch: 4700
+loss: 0.662823
+accuracy: 0.525
+ 
+training: batch result
+epoch: 4800
+loss: 0.660966
+accuracy: 0.625
+ 
+training: batch result
+epoch: 4900
+loss: 0.677439
+accuracy: 0.525
+ 
+training: batch result
+epoch: 5000
+loss: 0.662219
+accuracy: 0.525
+ 
+training: batch result
+epoch: 5100
+loss: 0.721926
+accuracy: 0.5
+ 
+training: batch result
+epoch: 5200
+loss: 0.673601
+accuracy: 0.625
+ 
+training: batch result
+epoch: 5300
+loss: 0.658801
+accuracy: 0.6
+ 
+training: batch result
+epoch: 5400
+loss: 0.65826
+accuracy: 0.6
+ 
+training: batch result
+epoch: 5500
+loss: 0.664826
+accuracy: 0.55
+ 
+training: batch result
+epoch: 5600
+loss: 0.660572
+accuracy: 0.55
+ 
+training: batch result
+epoch: 5700
+loss: 0.685433
+accuracy: 0.625
+ 
+training: batch result
+epoch: 5800
+loss: 0.664902
+accuracy: 0.575
+ 
+training: batch result
+epoch: 5900
+loss: 0.67663
+accuracy: 0.625
+ 
+training: batch result
+epoch: 6000
+loss: 0.665233
+accuracy: 0.55
+ 
+training: batch result
+epoch: 6100
+loss: 0.629511
+accuracy: 0.65
+ 
+training: batch result
+epoch: 6200
+loss: 0.662441
+accuracy: 0.625
+ 
+training: batch result
+epoch: 6300
+loss: 0.644601
+accuracy: 0.65
+ 
+training: batch result
+epoch: 6400
+loss: 0.667253
+accuracy: 0.625
+ 
+training: batch result
+epoch: 6500
+loss: 0.667875
+accuracy: 0.65
+ 
+training: batch result
+epoch: 6600
+loss: 0.666122
+accuracy: 0.575
+ 
+training: batch result
+epoch: 6700
+loss: 0.691494
+accuracy: 0.55
+ 
+training: batch result
+epoch: 6800
+loss: 0.692312
+accuracy: 0.6
+ 
+training: batch result
+epoch: 6900
+loss: 0.682992
+accuracy: 0.575
+ 
+training: batch result
+epoch: 7000
+loss: 0.650661
+accuracy: 0.625
+ 
+training: batch result
+epoch: 7100
+loss: 0.640276
+accuracy: 0.65
+ 
+training: batch result
+epoch: 7200
+loss: 0.677298
+accuracy: 0.55
+ 
+training: batch result
+epoch: 7300
+loss: 0.63873
+accuracy: 0.6
+ 
+training: batch result
+epoch: 7400
+loss: 0.67233
+accuracy: 0.575
+ 
+training: batch result
+epoch: 7500
+loss: 0.638304
+accuracy: 0.65
+ 
+training: batch result
+epoch: 7600
+loss: 0.672242
+accuracy: 0.5
+ 
+training: batch result
+epoch: 7700
+loss: 0.660353
+accuracy: 0.65
+ 
+training: batch result
+epoch: 7800
+loss: 0.699772
+accuracy: 0.6
+ 
+training: batch result
+epoch: 7900
+loss: 0.647528
+accuracy: 0.625
+ 
+training: batch result
+epoch: 8000
+loss: 0.686124
+accuracy: 0.55
+ 
+training: batch result
+epoch: 8100
+loss: 0.660368
+accuracy: 0.6
+ 
+training: batch result
+epoch: 8200
+loss: 0.671054
+accuracy: 0.6
+ 
+training: batch result
+epoch: 8300
+loss: 0.657698
+accuracy: 0.625
+ 
+training: batch result
+epoch: 8400
+loss: 0.669768
+accuracy: 0.6
+ 
+training: batch result
+epoch: 8500
+loss: 0.627314
+accuracy: 0.6
+ 
+training: batch result
+epoch: 8600
+loss: 0.649184
+accuracy: 0.65
+ 
+training: batch result
+epoch: 8700
+loss: 0.655789
+accuracy: 0.575
+ 
+training: batch result
+epoch: 8800
+loss: 0.642567
+accuracy: 0.6
+ 
+training: batch result
+epoch: 8900
+loss: 0.670975
+accuracy: 0.55
+ 
+training: batch result
+epoch: 9000
+loss: 0.674345
+accuracy: 0.525
+ 
+training: batch result
+epoch: 9100
+loss: 0.646898
+accuracy: 0.675
+ 
+training: batch result
+epoch: 9200
+loss: 0.657627
+accuracy: 0.6
+ 
+training: batch result
+epoch: 9300
+loss: 0.640071
+accuracy: 0.625
+ 
+training: batch result
+epoch: 9400
+loss: 0.650725
+accuracy: 0.6
+ 
+training: batch result
+epoch: 9500
+loss: 0.647175
+accuracy: 0.65
+ 
+training: batch result
+epoch: 9600
+loss: 0.681859
+accuracy: 0.6
+ 
+training: batch result
+epoch: 9700
+loss: 0.676176
+accuracy: 0.575
+ 
+training: batch result
+epoch: 9800
+loss: 0.648673
+accuracy: 0.625
+ 
+training: batch result
+epoch: 9900
+loss: 0.674709
+accuracy: 0.6
+ 
+training: batch result
+epoch: 10000
+loss: 0.698597
+accuracy: 0.525
+ 
+Testing accuracy: 0.590560018706
+training: batch result
+epoch: 10100
+loss: 0.6653
+accuracy: 0.6
+ 
+training: batch result
+epoch: 10200
+loss: 0.682554
+accuracy: 0.625
+ 
+training: batch result
+epoch: 10300
+loss: 0.654099
+accuracy: 0.625
+ 
+training: batch result
+epoch: 10400
+loss: 0.657679
+accuracy: 0.525
+ 
+training: batch result
+epoch: 10500
+loss: 0.68426
+accuracy: 0.55
+ 
+training: batch result
+epoch: 10600
+loss: 0.68293
+accuracy: 0.6
+ 
+training: batch result
+epoch: 10700
+loss: 0.625464
+accuracy: 0.625
+ 
+training: batch result
+epoch: 10800
+loss: 0.645639
+accuracy: 0.675
+ 
+training: batch result
+epoch: 10900
+loss: 0.678972
+accuracy: 0.575
+ 
+training: batch result
+epoch: 11000
+loss: 0.671255
+accuracy: 0.6
+ 
+training: batch result
+epoch: 11100
+loss: 0.643606
+accuracy: 0.65
+ 
+training: batch result
+epoch: 11200
+loss: 0.691839
+accuracy: 0.55
+ 
+training: batch result
+epoch: 11300
+loss: 0.630452
+accuracy: 0.725
+ 
+training: batch result
+epoch: 11400
+loss: 0.662833
+accuracy: 0.575
+ 
+training: batch result
+epoch: 11500
+loss: 0.672922
+accuracy: 0.55
+ 
+training: batch result
+epoch: 11600
+loss: 0.638746
+accuracy: 0.6
+ 
+training: batch result
+epoch: 11700
+loss: 0.636838
+accuracy: 0.55
+ 
+training: batch result
+epoch: 11800
+loss: 0.648207
+accuracy: 0.625
+ 
+training: batch result
+epoch: 11900
+loss: 0.639483
+accuracy: 0.675
+ 
+training: batch result
+epoch: 12000
+loss: 0.63279
+accuracy: 0.6
+ 
+training: batch result
+epoch: 12100
+loss: 0.662162
+accuracy: 0.625
+ 
+training: batch result
+epoch: 12200
+loss: 0.658925
+accuracy: 0.55
+ 
+training: batch result
+epoch: 12300
+loss: 0.603669
+accuracy: 0.6
+ 
+training: batch result
+epoch: 12400
+loss: 0.623508
+accuracy: 0.7
+ 
+training: batch result
+epoch: 12500
+loss: 0.624743
+accuracy: 0.625
+ 
+training: batch result
+epoch: 12600
+loss: 0.702005
+accuracy: 0.55
+ 
+training: batch result
+epoch: 12700
+loss: 0.658082
+accuracy: 0.65
+ 
+training: batch result
+epoch: 12800
+loss: 0.683939
+accuracy: 0.55
+ 
+training: batch result
+epoch: 12900
+loss: 0.640342
+accuracy: 0.625
+ 
+training: batch result
+epoch: 13000
+loss: 0.661945
+accuracy: 0.575
+ 
+training: batch result
+epoch: 13100
+loss: 0.657513
+accuracy: 0.625
+ 
+training: batch result
+epoch: 13200
+loss: 0.632317
+accuracy: 0.675
+ 
+training: batch result
+epoch: 13300
+loss: 0.633232
+accuracy: 0.625
+ 
+training: batch result
+epoch: 13400
+loss: 0.62893
+accuracy: 0.675
+ 
+training: batch result
+epoch: 13500
+loss: 0.627336
+accuracy: 0.65
+ 
+training: batch result
+epoch: 13600
+loss: 0.672439
+accuracy: 0.625
+ 
+training: batch result
+epoch: 13700
+loss: 0.647151
+accuracy: 0.675
+ 
+training: batch result
+epoch: 13800
+loss: 0.626826
+accuracy: 0.675
+ 
+training: batch result
+epoch: 13900
+loss: 0.6406
+accuracy: 0.575
+ 
+training: batch result
+epoch: 14000
+loss: 0.662099
+accuracy: 0.625
+ 
+training: batch result
+epoch: 14100
+loss: 0.629726
+accuracy: 0.725
+ 
+training: batch result
+epoch: 14200
+loss: 0.626906
+accuracy: 0.675
+ 
+training: batch result
+epoch: 14300
+loss: 0.654408
+accuracy: 0.525
+ 
+training: batch result
+epoch: 14400
+loss: 0.629469
+accuracy: 0.625
+ 
+training: batch result
+epoch: 14500
+loss: 0.637978
+accuracy: 0.625
+ 
+training: batch result
+epoch: 14600
+loss: 0.610278
+accuracy: 0.7
+ 
+training: batch result
+epoch: 14700
+loss: 0.647889
+accuracy: 0.65
+ 
+training: batch result
+epoch: 14800
+loss: 0.629279
+accuracy: 0.675
+ 
+training: batch result
+epoch: 14900
+loss: 0.641636
+accuracy: 0.625
+ 
+training: batch result
+epoch: 15000
+loss: 0.648272
+accuracy: 0.575
+ 
+training: batch result
+epoch: 15100
+loss: 0.629762
+accuracy: 0.7
+ 
+training: batch result
+epoch: 15200
+loss: 0.643779
+accuracy: 0.625
+ 
+training: batch result
+epoch: 15300
+loss: 0.647146
+accuracy: 0.6
+ 
+training: batch result
+epoch: 15400
+loss: 0.641648
+accuracy: 0.675
+ 
+training: batch result
+epoch: 15500
+loss: 0.641014
+accuracy: 0.65
+ 
+training: batch result
+epoch: 15600
+loss: 0.634737
+accuracy: 0.65
+ 
+training: batch result
+epoch: 15700
+loss: 0.621534
+accuracy: 0.725
+ 
+training: batch result
+epoch: 15800
+loss: 0.635862
+accuracy: 0.625
+ 
+training: batch result
+epoch: 15900
+loss: 0.636404
+accuracy: 0.625
+ 
+training: batch result
+epoch: 16000
+loss: 0.634796
+accuracy: 0.65
+ 
+training: batch result
+epoch: 16100
+loss: 0.643046
+accuracy: 0.525
+ 
+training: batch result
+epoch: 16200
+loss: 0.651068
+accuracy: 0.625
+ 
+training: batch result
+epoch: 16300
+loss: 0.628998
+accuracy: 0.675
+ 
+training: batch result
+epoch: 16400
+loss: 0.626912
+accuracy: 0.625
+ 
+training: batch result
+epoch: 16500
+loss: 0.635729
+accuracy: 0.6
+ 
+training: batch result
+epoch: 16600
+loss: 0.617572
+accuracy: 0.65
+ 
+training: batch result
+epoch: 16700
+loss: 0.654073
+accuracy: 0.7
+ 
+training: batch result
+epoch: 16800
+loss: 0.657073
+accuracy: 0.6
+ 
+training: batch result
+epoch: 16900
+loss: 0.696646
+accuracy: 0.55
+ 
+training: batch result
+epoch: 17000
+loss: 0.653101
+accuracy: 0.675
+ 
+training: batch result
+epoch: 17100
+loss: 0.653485
+accuracy: 0.625
+ 
+training: batch result
+epoch: 17200
+loss: 0.625653
+accuracy: 0.675
+ 
+training: batch result
+epoch: 17300
+loss: 0.663607
+accuracy: 0.575
+ 
+training: batch result
+epoch: 17400
+loss: 0.657312
+accuracy: 0.65
+ 
+training: batch result
+epoch: 17500
+loss: 0.613974
+accuracy: 0.625
+ 
+training: batch result
+epoch: 17600
+loss: 0.648631
+accuracy: 0.6
+ 
+training: batch result
+epoch: 17700
+loss: 0.65651
+accuracy: 0.6
+ 
+training: batch result
+epoch: 17800
+loss: 0.657284
+accuracy: 0.625
+ 
+training: batch result
+epoch: 17900
+loss: 0.644365
+accuracy: 0.65
+ 
+training: batch result
+epoch: 18000
+loss: 0.677345
+accuracy: 0.55
+ 
+training: batch result
+epoch: 18100
+loss: 0.64977
+accuracy: 0.575
+ 
+training: batch result
+epoch: 18200
+loss: 0.641855
+accuracy: 0.625
+ 
+training: batch result
+epoch: 18300
+loss: 0.572364
+accuracy: 0.8
+ 
+training: batch result
+epoch: 18400
+loss: 0.611487
+accuracy: 0.675
+ 
+training: batch result
+epoch: 18500
+loss: 0.650205
+accuracy: 0.625
+ 
+training: batch result
+epoch: 18600
+loss: 0.684758
+accuracy: 0.525
+ 
+training: batch result
+epoch: 18700
+loss: 0.644744
+accuracy: 0.65
+ 
+training: batch result
+epoch: 18800
+loss: 0.588185
+accuracy: 0.725
+ 
+training: batch result
+epoch: 18900
+loss: 0.626502
+accuracy: 0.725
+ 
+training: batch result
+epoch: 19000
+loss: 0.645337
+accuracy: 0.625
+ 
+training: batch result
+epoch: 19100
+loss: 0.633132
+accuracy: 0.675
+ 
+training: batch result
+epoch: 19200
+loss: 0.664368
+accuracy: 0.625
+ 
+training: batch result
+epoch: 19300
+loss: 0.694041
+accuracy: 0.575
+ 
+training: batch result
+epoch: 19400
+loss: 0.633936
+accuracy: 0.625
+ 
+training: batch result
+epoch: 19500
+loss: 0.646629
+accuracy: 0.7
+ 
+training: batch result
+epoch: 19600
+loss: 0.625714
+accuracy: 0.65
+ 
+training: batch result
+epoch: 19700
+loss: 0.632685
+accuracy: 0.675
+ 
+training: batch result
+epoch: 19800
+loss: 0.632413
+accuracy: 0.625
+ 
+training: batch result
+epoch: 19900
+loss: 0.673202
+accuracy: 0.6
+ 
+training: batch result
+epoch: 20000
+loss: 0.637559
+accuracy: 0.625
+ 
+Testing accuracy: 0.507460006642
+training: batch result
+epoch: 20100
+loss: 0.642346
+accuracy: 0.575
+ 
