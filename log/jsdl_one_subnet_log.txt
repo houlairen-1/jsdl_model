@@ -1,59 +1,74 @@
 [pysteg.jpeg] $Id: __init__.py 2204 2011-04-05 11:43:38Z georg $
 w0:(5, 5, 1, 25)
 conv0_s_1:Tensor("conv0/sub_1:0", shape=(40, 256, 256, 25), dtype=float32)
-pool3_s_1:(40, 512)
+pool3_s_1:(40, 2, 2, 128)
 training: batch result
 epoch: 100
-loss: 0.693146
+loss: 0.693136
 accuracy: 0.5
  
 training: batch result
 epoch: 200
-loss: 0.693147
+loss: 0.69307
 accuracy: 0.5
  
 training: batch result
 epoch: 300
-loss: 0.693147
+loss: 0.692437
 accuracy: 0.5
  
 training: batch result
 epoch: 400
-loss: 0.693148
+loss: 0.692272
 accuracy: 0.5
  
 training: batch result
 epoch: 500
-loss: 0.693149
-accuracy: 0.5
+loss: 0.686479
+accuracy: 0.575
  
 training: batch result
 epoch: 600
-loss: 0.693147
-accuracy: 0.5
+loss: 0.690412
+accuracy: 0.575
  
 training: batch result
 epoch: 700
-loss: 0.693147
-accuracy: 0.5
+loss: 0.692147
+accuracy: 0.525
  
 training: batch result
 epoch: 800
-loss: 0.693147
-accuracy: 0.5
+loss: 0.688905
+accuracy: 0.525
  
 training: batch result
 epoch: 900
-loss: 0.693147
-accuracy: 0.5
+loss: 0.682801
+accuracy: 0.55
  
 training: batch result
 epoch: 1000
-loss: 0.693147
-accuracy: 0.5
+loss: 0.693347
+accuracy: 0.525
  
 training: batch result
 epoch: 1100
-loss: 0.693147
+loss: 0.687842
 accuracy: 0.5
+ 
+training: batch result
+epoch: 1200
+loss: 0.68534
+accuracy: 0.525
+ 
+training: batch result
+epoch: 1300
+loss: 0.69749
+accuracy: 0.5
+ 
+training: batch result
+epoch: 1400
+loss: 0.691294
+accuracy: 0.525
  
