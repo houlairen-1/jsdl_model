@@ -5,27 +5,17 @@ list:weight_variable , maxpool , avgpool ,
      bottleneck,nonbottleneck(resnet),crelu,
      conv_bn_pool_relu,dimention_increase
      separate_conv2d,concat_select,select_cover_conv2d
-Author: Weihang Wei
-create on :2017-3-15
 '''
 import os
 import sys
 sys.path.append('/home/lgq/Workspace/jsdl_model/tools')
-import math
-import time
 
 from config import Config
 import tensorflow as tf
-from tensorflow.python.ops import variables
 from tensorflow.contrib.layers.python.layers import batch_norm
-from tensorflow.python.training import moving_averages
-from tensorflow.python.ops import control_flow_ops
 import numpy as np
-#from scipy import ndimage
 from jpeg import jpeg
 import random
-from pandas import DataFrame
-
 
 # generate weight for net ,the name of weight must be diffierent
 def weight_variable(shape,n_layer):
@@ -69,8 +59,6 @@ def BatchNorm(input,train_phase,n_layer):
     return z
 
 
-
-
 def conv2d(input,w,n_layer):
     conv_name = 'conv%s' % n_layer
     with tf.name_scope(conv_name):
@@ -86,14 +74,6 @@ def relu(input,n_layer):
         output = tf.nn.relu(input,name=relu_name)
     return output
 
-
-def tanh(input,n_layer):
-    tanh_name = 'tanh%s' % n_layer
-    with tf.name_scope(tanh_name):
-        output = tf.nn.tanh(input,name=tanh_name)
-    return output
-
-# output = |input|
 def abs(input,n_layer):
     abs_name = 'abs%s' % n_layer
     with tf.name_scope(abs_name):
@@ -192,8 +172,6 @@ def crelu(input,n_layer):
 	shortcut = input*(-1)
 	out = tf.concat(1,[input,shortcut])
     return tf.nn.relu(out , name=crelu_name)
-
-
 
 def get_data_same(inputx,inputy,c,flist,count,type):
     #c:path1~4,numdata,batchsize,

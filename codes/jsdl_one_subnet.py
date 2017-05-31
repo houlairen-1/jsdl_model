@@ -13,22 +13,22 @@ import tensorflow.contrib.slim as slim
 from tensorflow.contrib.layers.python.layers import utils
 #from tensorflow.contrib.layers.python.layers import batch_norm as batch_norm
 
-BATCH_SIZE = 40
+BATCH_SIZE = 100
 IMAGE_SIZE = 256
 NUM_CHANNEL = 1
 NUM_LABELS = 2
-NUM_ITER = 80000
+NUM_ITER = 100000
 NUM_SHOWTRAIN = 100 #show result eveary epoch 
 NUM_SHOWTEST = 10000
 
 
-LEARNING_RATE = 0.1
+LEARNING_RATE = 0.01
 activation_func1 = tf.nn.relu
 activation_func2 = tf.nn.tanh
 
-Q_1 = 1
+Q_1 = 4
 Q_2 = 2
-Q_3 = 4
+Q_3 = 1
 T = 4
 
 c = Config()

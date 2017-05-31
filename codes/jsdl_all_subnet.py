@@ -1,31 +1,22 @@
 import os
-import sys
-import time
 import train
 
 from config import Config
 import tensorflow as tf
 import numpy as np
-import random
-from pandas import DataFrame
-import matplotlib.pyplot as plt
 import tensorflow.contrib.slim as slim
-from tensorflow.contrib.layers.python.layers import utils
-#from tensorflow.contrib.layers.python.layers import batch_norm as batch_norm
+from concat import concat
 
-BATCH_SIZE = 40
+BATCH_SIZE = 50
 IMAGE_SIZE = 256
 NUM_CHANNEL = 1
 NUM_LABELS = 2
-NUM_ITER = 80000
+NUM_ITER = 100000
 NUM_SHOWTRAIN = 100 #show result eveary epoch 
 NUM_SHOWTEST = 10000
 
 
-LEARNING_RATE =0.001
-LEARNING_RATE_DECAY = 0.1
-MOMENTUM = 0.9
-decay_step = 10000
+LEARNING_RATE =0.01
 activation_func1 = tf.nn.relu
 activation_func2 = tf.nn.tanh
 
@@ -164,10 +155,10 @@ def model(x,is_train):
         pool3_s_3 = train.avg_pool(conv3_s_3,32,32,'SAME',15)
         pool3_s_3 = tf.reshape(pool3_s_3, [BATCH_SIZE, 512])
         print "pool3_s_1:{0}".format(pool3_s_1.get_shape())
-        pool3 = tf.concat(1,[tf.to_int32(pool3_s_1) , tf.to_int32(pool3_s_2)])
-        pool3 = tf.concat(1,[pool3, tf.to_int32(pool3_s_3)])
-        pool3 = tf.to_float(pool3)
-        
+
+        # concat.py
+        # customize tf.concat, values' type change into tf.float32
+        pool3 = concat(1,[pool3_s_1, pool3_s_2, pool3_s_3])
 #        print "pool3:{0}".format(pool3.get_shape())
 
     with tf.variable_scope('fully_connecting') as scope:
@@ -181,9 +172,12 @@ def model(x,is_train):
         b4 = tf.Variable(tf.random_normal([2],mean=0.0,stddev=0.01),name="b4" )
 
         temp = tf.matmul(pool3, w1) + b1 
-        temp = tf.matmul(temp, w2) + b2
-        temp = tf.matmul(temp, w3) + b3
-        temp = tf.matmul(temp, w4) + b4
+        fc_1 = relu(temp,20)
+        temp = tf.matmul(fc_1, w2) + b2
+        fc_2 = relu(temp,21)
+        temp = tf.matmul(fc_2, w3) + b3
+        fc_3 = relu(temp,24)
+        temp = tf.matmul(fc_3, w4) + b4
         y_ = tf.nn.softmax(temp)
 
     vars = tf.trainable_variables()
@@ -210,7 +204,7 @@ def process():
     with tf.name_scope('loss'):
         loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_, y))
         tf.scalar_summary('loss',loss)
-        opt = tf.train.GradientDescentOptimizer(0.001).minimize(loss,var_list=params)
+        opt = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(loss,var_list=params)
 
     data_x = np.zeros([BATCH_SIZE,IMAGE_SIZE,IMAGE_SIZE,NUM_CHANNEL])
     data_y = np.zeros([BATCH_SIZE,NUM_LABELS])
