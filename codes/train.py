@@ -173,37 +173,35 @@ def crelu(input,n_layer):
 	out = tf.concat(1,[input,shortcut])
     return tf.nn.relu(out , name=crelu_name)
 
-def get_data_same(inputx,inputy,c,flist,count,type):
-    #c:path1~4,numdata,batchsize,
-    numdata = c['numdata']
-    batchsize = c['batchsize']
-    if type==0:
-        path = c['path1']
-    elif type==1:
-        path = c['path2']
-    elif type==2:
-        path = c['path3']
-    else:
-        path = c['path4']
-
-    if (count%numdata==0 and count!=0):
-        np.set_printoptions(threshold='nan')
-        random.seed(count/numdata)
-        random.shuffle(flist)
-    
-    for j in range(batchsize):
-        imc = jpeg(path+'/'+flist[count]).getSpatial()
-        if (type==0 and type==2):
-            inputy[j,0] = 0
-            inputy[j,1] = 1
-        else:
-            inputy[j,0] = 1
-            inputy[j,1] = 0
-        count = count+1
-        inputx[j,:,:,0] = imc.astype(np.float32)
-    return inputx,inputy,count
-
-
+###def get_data_same(inputx,inputy,c,flist,count,type):
+###    #c:path1~4,numdata,batchsize,
+###    numdata = c['numdata']
+###    batchsize = c['batchsize']
+###    if type==0:
+###        path = c['path1']
+###    elif type==1:
+###        path = c['path2']
+###    elif type==2:
+###        path = c['path3']
+###    else:
+###        path = c['path4']
+###
+###    if (count%numdata==0 and count!=0):
+###        np.set_printoptions(threshold='nan')
+###        random.seed(count/numdata)
+###        random.shuffle(flist)
+###    
+###    for j in range(batchsize):
+###        imc = jpeg(path+'/'+flist[count]).getSpatial()
+###        if (type==0 and type==2):
+###            inputy[j,0] = 0
+###            inputy[j,1] = 1
+###        else:
+###            inputy[j,0] = 1
+###            inputy[j,1] = 0
+###        count = count+1
+###        inputx[j,:,:,0] = imc.astype(np.float32)
+###    return inputx,inputy,count
 
 def get_data_match(inputx,inputy,c,count,type):   
     #type:'0'is training,'1'is testing
@@ -229,67 +227,69 @@ def get_data_match(inputx,inputy,c,count,type):
                 inputy[j,0] = 1
                 inputy[j,1] = 0
                 count = count+1
-                num = num+1
+                num = count % numdata
             inputx[j,:,:,0] = imc.astype(np.float32)
     else:
-         for j in range(batchsize):
+        num = count % numdata
+        for j in range(batchsize):
             if j%2==0:
-                imc = jpeg(c['path2']+'/'+flist2[count]).getSpatial()
+                imc = jpeg(c['path2']+'/'+flist2[num]).getSpatial()
                 inputy[j,0] = 0
                 inputy[j,1] = 1
             else:
-                imc = jpeg(c['path4']+'/'+flist2[count]).getSpatial()
+                imc = jpeg(c['path4']+'/'+flist2[num]).getSpatial()
                 inputy[j,0] = 1
                 inputy[j,1] = 0
                 count = count+1
+                num = count % numdata
             inputx[j,:,:,0] = imc.astype(np.float32)
         
     return inputx,inputy,count
 
-def get_map_match(inputx,inputy,inputmap,c,count,type):   
-    #type:'0'is training,'1'is testing
-    numdata = c['numdata']
-    batchsize = c['batchsize']
-    
-    if (count%numdata==0 and count!=0):
-        np.set_printoptions(threshold='nan')
-        random.seed(count/numdata)
-        random.shuffle(c['flist1'])
-        
-    flist1 = c['flist1']
-    flist2 = c['flist2']
-    if type ==0:
-        num = count % numdata
-        for j in range(batchsize):
-            imap = jpeg(c['path5']+'/'+flist1[num]).getSpatial()
-            if j%2==0:
-                imc = jpeg(c['path1']+'/'+flist1[num]).getSpatial()
-                inputy[j,0] = 0
-                inputy[j,1] = 1
-            else:
-                imc = jpeg(c['path3']+'/'+flist1[num]).getSpatial()
-                inputy[j,0] = 1
-                inputy[j,1] = 0
-                count = count+1
-                num = num+1
-            inputx[j,:,:,0] = imc.astype(np.float32)
-            inputmap[j,:,:,0] = imap.astype(np.float32)
-    else:
-         for j in range(batchsize):
-            imap = jpeg(c['path5']+'/'+flist2[count]).getSpatial()
-            if j%2==0:
-                imc = jpeg(c['path2']+'/'+flist2[count]).getSpatial()
-                inputy[j,0] = 0
-                inputy[j,1] = 1
-            else:
-                imc = jpeg(c['path4']+'/'+flist2[count]).getSpatial()
-                inputy[j,0] = 1
-                inputy[j,1] = 0
-                count = count+1
-            inputx[j,:,:,0] = imc.astype(np.float32)
-            inputmap[j,:,:,0] = imap.astype(np.float32)
-        
-    return inputx,inputy,inputmap,count
+###def get_map_match(inputx,inputy,inputmap,c,count,type):   
+###    #type:'0'is training,'1'is testing
+###    numdata = c['numdata']
+###    batchsize = c['batchsize']
+###    
+###    if (count%numdata==0 and count!=0):
+###        np.set_printoptions(threshold='nan')
+###        random.seed(count/numdata)
+###        random.shuffle(c['flist1'])
+###        
+###    flist1 = c['flist1']
+###    flist2 = c['flist2']
+###    if type ==0:
+###        num = count % numdata
+###        for j in range(batchsize):
+###            imap = jpeg(c['path5']+'/'+flist1[num]).getSpatial()
+###            if j%2==0:
+###                imc = jpeg(c['path1']+'/'+flist1[num]).getSpatial()
+###                inputy[j,0] = 0
+###                inputy[j,1] = 1
+###            else:
+###                imc = jpeg(c['path3']+'/'+flist1[num]).getSpatial()
+###                inputy[j,0] = 1
+###                inputy[j,1] = 0
+###                count = count+1
+###                num = num+1
+###            inputx[j,:,:,0] = imc.astype(np.float32)
+###            inputmap[j,:,:,0] = imap.astype(np.float32)
+###    else:
+###         for j in range(batchsize):
+###            imap = jpeg(c['path5']+'/'+flist2[count]).getSpatial()
+###            if j%2==0:
+###                imc = jpeg(c['path2']+'/'+flist2[count]).getSpatial()
+###                inputy[j,0] = 0
+###                inputy[j,1] = 1
+###            else:
+###                imc = jpeg(c['path4']+'/'+flist2[count]).getSpatial()
+###                inputy[j,0] = 1
+###                inputy[j,1] = 0
+###                count = count+1
+###            inputx[j,:,:,0] = imc.astype(np.float32)
+###            inputmap[j,:,:,0] = imap.astype(np.float32)
+###        
+###    return inputx,inputy,inputmap,count
 
 def batch_norm_wrapper(inputs, is_training, decay = 0.999,epsilon = 0.001):
 

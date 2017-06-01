@@ -7,7 +7,7 @@ import numpy as np
 import tensorflow.contrib.slim as slim
 from concat import concat
 
-BATCH_SIZE = 50
+BATCH_SIZE = 64
 IMAGE_SIZE = 256
 NUM_CHANNEL = 1
 NUM_LABELS = 2
@@ -16,7 +16,9 @@ NUM_SHOWTRAIN = 100 #show result eveary epoch
 NUM_SHOWTEST = 10000
 
 
-LEARNING_RATE =0.01
+LEARNING_RATE_BASE = 0.01
+LEARNING_RATE_DECAY = 0.9
+STEPSIZE = 5000
 activation_func1 = tf.nn.relu
 activation_func2 = tf.nn.tanh
 
@@ -26,10 +28,10 @@ Q_3 = 4
 T = 4
 
 c = Config()
-c['path1'] = '/data/lgq/basic50k/basic50k/basic50k_train/cover'
-c['path2'] = '/data/lgq/basic50k/basic50k/basic50k_test/cover'
-c['path3'] = '/data/lgq/basic50k/basic50k/basic50k_train/stego_j-uniward_40'
-c['path4'] = '/data/lgq/basic50k/basic50k/basic50k_test/stego_j-uniward_40'
+c['path1'] = '/data/lgq/basic50k/basic50k_train/cover'
+c['path2'] = '/data/lgq/basic50k/basic50k_test/cover'
+c['path3'] = '/data/lgq/basic50k/basic50k_train/stego_j-uniward_40'
+c['path4'] = '/data/lgq/basic50k/basic50k_test/stego_j-uniward_40'
 c['numdata'] = 25000
 c['batchsize'] = BATCH_SIZE
 
@@ -161,32 +163,38 @@ def model(x,is_train):
         pool3 = concat(1,[pool3_s_1, pool3_s_2, pool3_s_3])
 #        print "pool3:{0}".format(pool3.get_shape())
 
-    with tf.variable_scope('fully_connecting') as scope:
-        w1 = train.weight_variable([512*3,800],16)
-        b1 = tf.Variable(tf.random_normal([800],mean=0.0,stddev=0.01),name="b1" )
-        w2 = train.weight_variable([800,400],17)
-        b2 = tf.Variable(tf.random_normal([400],mean=0.0,stddev=0.01),name="b2" )
-        w3 = train.weight_variable([400,200],18)
-        b3 = tf.Variable(tf.random_normal([200],mean=0.0,stddev=0.01),name="b3" )
-        w4 = train.weight_variable([200,2],19)
-        b4 = tf.Variable(tf.random_normal([2],mean=0.0,stddev=0.01),name="b4" )
+    with tf.variable_scope('fc1') as scope:
+        fc1_weights = tf.get_variable("weights", shape=[512*3,800],
+                             initializer=tf.contrib.layers.xavier_initializer())
+        fc1_bias = tf.get_variable("bias", [800],
+                             initializer=tf.constant_initializer(0.1))
+        fc1 = tf.nn.relu(tf.matmul(pool3, fc1_weights) + fc1_bias)
 
-        temp = tf.matmul(pool3, w1) + b1 
-        fc_1 = relu(temp,20)
-        temp = tf.matmul(fc_1, w2) + b2
-        fc_2 = relu(temp,21)
-        temp = tf.matmul(fc_2, w3) + b3
-        fc_3 = relu(temp,24)
-        temp = tf.matmul(fc_3, w4) + b4
-        y_ = tf.nn.softmax(temp)
+    with tf.variable_scope('fc2') as scope:
+        fc2_weights = tf.get_variable("weights", shape=[800,400],
+                             initializer=tf.contrib.layers.xavier_initializer())
+        fc2_bias = tf.get_variable("bias", [400],
+                             initializer=tf.constant_initializer(0.1))
+        fc2 = tf.nn.relu(tf.matmul(fc1, fc2_weights) + fc2_bias)
+
+    with tf.variable_scope('fc3') as scope:
+        fc3_weights = tf.get_variable("weights", shape=[400,200],
+                             initializer=tf.contrib.layers.xavier_initializer())
+        fc3_bias = tf.get_variable("bias", [200],
+                             initializer=tf.constant_initializer(0.1))
+        fc3 = tf.nn.relu(tf.matmul(fc2, fc3_weights) + fc3_bias)
+
+    with tf.variable_scope('fc4') as scope:
+        fc4_weights = tf.get_variable("weights", shape=[200,2],
+                             initializer=tf.contrib.layers.xavier_initializer())
+        fc4_bias = tf.get_variable("bias", [2],
+                             initializer=tf.constant_initializer(0.1))
+        y_ = tf.matmul(fc3, fc4_weights) + fc4_bias
 
     vars = tf.trainable_variables()
     params = [v for v in vars if ( v.name.startswith('conv1/') or  v.name.startswith('conv2/') or  v.name.startswith('conv3/')\
-                                   or v.name.startswith('conv4/') or  v.name.startswith('conv5/') or  v.name.startswith('conv6/')\
-                                   or v.name.startswith('conv7/') or  v.name.startswith('conv8/') or  v.name.startswith('conv9/')\
-                                   or v.name.startswith('conv10/') or  v.name.startswith('conv11/') or  v.name.startswith('conv12/')\
-                                   or v.name.startswith('conv13/') or  v.name.startswith('conv14/') or  v.name.startswith('conv15/')\
-                                   or  v.name.startswith('fully_connecting/') ) ]
+                                   or v.name.startswith('fc1/') or  v.name.startswith('fc2/') or  v.name.startswith('fc3/') 
+                                   or  v.name.startswith('fc4/')) ]
     return y_,params
 
 def process():
@@ -200,11 +208,12 @@ def process():
     global_step = tf.Variable(0,trainable = False)
     with tf.name_scope('acc'):
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-        tf.scalar_summary('acc',accuracy)
+        tf.summary.scalar('acc',accuracy)
     with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_, y))
-        tf.scalar_summary('loss',loss)
-        opt = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(loss,var_list=params)
+        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y_, labels=y))
+        tf.summary.scalar('loss',loss)
+        learning_rate = tf.train.exponential_decay(LEARNING_RATE_BASE, global_step, STEPSIZE, LEARNING_RATE_DECAY, staircase=True)
+        opt = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,var_list=params, global_step=global_step)
 
     data_x = np.zeros([BATCH_SIZE,IMAGE_SIZE,IMAGE_SIZE,NUM_CHANNEL])
     data_y = np.zeros([BATCH_SIZE,NUM_LABELS])
@@ -214,7 +223,7 @@ def process():
     config.gpu_options.allow_growth = True
 
     with tf.Session(config=config) as sess:
-        tf.initialize_all_variables().run()
+        tf.global_variables_initializer().run()
         #saver.restore(sess,"/home/weiweihang/program/python/tensorflow/xu_model_wei/xu_m_wei_10000.ckpt")
 	
         count = 0
